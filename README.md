@@ -8,10 +8,13 @@ This is an example of an App combining some of the most used tech's actually as
 ##### AWS
 ##### Mysql
 
+### Configuring AWS Credentials
+ - Edit file application.yml and set your acessKey and secretKey
+ - Set the bucket url as well, to storage images
 
 ###  Running manually
 
-#### Spring boot service
+##### Spring boot service
 Car Rent Service is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Gradle](https://spring.io/guides/gs/gradle/). You can build a jar file and run it from the command line:
 
 ```

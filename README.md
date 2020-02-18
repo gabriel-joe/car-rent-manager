@@ -1,6 +1,6 @@
 ###  Introduction
 
-This is an example of an App combining some of the most used tech's actually as
+This is an example of an App combining some of the most used tech's today
 
 - Docker
 - SpringBoot

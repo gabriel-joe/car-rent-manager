@@ -2,11 +2,11 @@
 
 This is an example of an App combining some of the most used tech's actually as
 
-##### Docker
-##### SpringBoot
-##### Vue.js
-##### AWS
-##### Mysql
+- Docker
+- SpringBoot
+- Vue.js
+- AWS
+- Mysql
 
 ### Configuring AWS Credentials
  - Edit file application.yml and set your acessKey and secretKey

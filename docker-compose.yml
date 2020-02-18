@@ -1,0 +1,33 @@
+version: '3'
+services:
+  mysql:
+    image: 'mysql:5.7'
+    hostname: mysql
+    environment:
+      - MYSQL_PASSWORD=admin
+      - MYSQL_USER=admin
+      - MYSQL_DATABASE=rentcar
+      - MYSQL_ROOT_PASSWORD=rentcar
+    ports:
+      - '3306:3306'
+  service:
+    image: 'gabrieljoe/car-rent-service:latest'
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    ports:
+      - '8090:8090'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql/rentcar?useSSL=false&allowPublicKeyRetrieval=true
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_HOSTS_TIMEOUT=150
+      - WAIT_SLEEP_INTERVAL=5      
+  web-front:
+    image: 'gabrieljoe/car-rent-web:latest'
+    depends_on:
+      - service
+    links:
+      - service
+    ports:
+      - '8080:8080'

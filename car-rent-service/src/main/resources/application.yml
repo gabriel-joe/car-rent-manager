@@ -1,0 +1,31 @@
+logging:
+    level.org.hibernate: ERROR
+    level.org.springframework.web: ERROR
+    
+server:
+   servlet:
+      context-path: /car-rent-service
+   port: 8090
+
+email:
+   origin: gabrielsaantos02@gmail.com
+
+spring: 
+    main:
+        banner-mode: "off"     
+    jpa:
+        database: h2
+        hibernate:
+            dialect: org.hibernate.dialect.H2Dialect
+            ddl-auto: create-drop
+    datasource:
+         schema: classpath*:db/${database}/schema.sql
+         data: classpath*:db/${database}/data.sql
+
+cloud.aws:
+    credentials: 
+          accessKey: 
+          secretKey: 
+    bucket:
+        name: car-rent
+        url: https://car-rent.s3-us-west-2.amazonaws.com
